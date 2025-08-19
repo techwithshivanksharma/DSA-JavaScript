@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Array Traversing and Accessing</title>
+
+    <script>
+      let arr = [10, 11, 12, 13, 14, 15, 16, 28, 30, 43];
+      // for(let i=0;i < arr.length;i++){
+      //     document.write(`${i}th Element : ${arr[i]} <br>`);
+      // }
+
+      const getElement = () => {
+        let index = document.getElementById("index").value;
+        index = Number(index);
+        
+        console.log(typeof index);
+
+        if (index < arr.length && index >= 0) {
+          alert(`${index}th Value : ${arr[index]}`);
+        } else {
+          alert("Enter a valid Index!!");
+        }
+        document.getElementById('index').value = "";  
+      };
+    </script>
+  </head>
+  <body>
+    <input type="text" placeholder="Enter Index Value" id="index" />
+    <button onclick="getElement()">Search</button>
+  </body>
+</html>

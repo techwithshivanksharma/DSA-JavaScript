@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Insering Element in an Array</title>
+
+    <script>
+      let arr = [10, 13, 15, 18, 20, 23, 27];
+
+      //   let el = 12;
+      //   let pos = 3;
+
+      //   for (let i = arr.length - 1; i >= pos; i--) {
+      //     arr[i+1] = arr[i];
+      //     if(i == pos){
+      //         arr[i] = el;
+      //     }
+      //   }
+      //   console.warn(arr);
+
+      const add = () => {
+        let element = document.getElementById("elementInput").value;
+        element = parseInt(element);
+        let pos = document.getElementById("positionInput").value;
+        pos = parseInt(pos);
+
+        if (pos < 0 || pos > arr.length) {
+          alert("Enter a Valid Position")
+        } else {
+          for (let i = arr.length - 1; i >= pos; i--) {
+            arr[i + 1] = arr[i];
+          }
+          arr[pos] = element;
+          console.warn(arr);
+        }
+        document.getElementById('elementInput').value = "";
+        document.getElementById('positionInput').value = "";
+      };
+    </script>
+  </head>
+  <body>
+    <input type="text" placeholder="Element to insert" id="elementInput" />
+    <input type="text" placeholder="Position" id="positionInput" />
+    <button onclick="add()">ADD</button>
+  </body>
+</html>
