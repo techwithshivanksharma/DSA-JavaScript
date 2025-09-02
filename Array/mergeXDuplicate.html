@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Merging Unsorted Array</title>
+
+    <script>
+      let arr1 = [10, 13, 10, 7, 5, 7, 44];
+      let arr2 = [2, 50, 10, 14, 44, 50];
+      let arr3 = [];
+
+      let i = 0,
+        j = 0,
+        k = 0;
+
+      while (i < arr1.length) {
+        if (arr3.indexOf(arr1[i]) === -1) {
+          arr3[k] = arr1[i];
+          k++;
+        }
+        i++;
+      }
+      while (j < arr2.length) {
+        if (arr3.indexOf(arr2[j]) === -1) {
+          arr3[k] = arr2[j];
+          k++;
+        }
+        j++;
+      }
+
+      console.warn(arr3);
+    </script>
+  </head>
+  <body></body>
+</html>
